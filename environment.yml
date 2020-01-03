@@ -15,6 +15,7 @@ dependencies:
   - numba=0.45.1
   - scikit-image=0.15.0
   - pip=19.2.3=py37_0
+  - itkwidgets=0.24.1=py37_0
   - pip:
     - ezdxf==0.10.2
     - itk-core==5.0.1
