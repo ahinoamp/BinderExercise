@@ -12,8 +12,8 @@ dependencies:
   - numba
   - scikit-image
   - vtk
+  - k3d
   - pip:
-     - k3d
      - nibabel
      - pynoddy
      - ezdxf
