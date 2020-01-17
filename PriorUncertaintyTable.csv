@@ -1,0 +1,28 @@
+Property,Parameter,Normal fault dipping East,Small normal Fault dipping west,Small normal Fault dipping east,Normal Fault dipping west
+Dip,Prior distribution type,Uniform,Uniform,Uniform,Uniform
+Dip,Prior distribution paramter 1,50,60,40,50
+Dip,Prior distribution paramter 2,90,90,70,90
+Slip,Prior distribution type,Uniform,Uniform,Uniform,Uniform
+Slip,Prior distribution paramter 1,600,500,400,400
+Slip,Prior distribution paramter 2,900,700,600,600
+X,Prior distribution type,Uniform,Uniform,Uniform,Uniform
+X,Prior distribution paramter 1,5000,5000,2000,1000
+X,Prior distribution paramter 2,7000,7000,4000,3000
+Y,Prior distribution type,Uniform,Uniform,Uniform,Uniform
+Y,Prior distribution paramter 1,5000,5000,4000,3500
+Y,Prior distribution paramter 2,7000,7000,6000,4500
+Z,Prior distribution type,Uniform,Uniform,Uniform,Uniform
+Z,Prior distribution paramter 1,4000,4000,4000,4000
+Z,Prior distribution paramter 2,6000,6000,6000,6000
+Dip Direction,Prior distribution type,Uniform,Uniform,Uniform,Uniform
+Dip Direction,Prior distribution paramter 1,100,280,80,280
+Dip Direction,Prior distribution paramter 2,140,320,100,300
+XAxis,Prior distribution type,Uniform,Uniform,Uniform,Uniform
+XAxis,Prior distribution paramter 1,5500,3000,2300,3000
+XAxis,Prior distribution paramter 2,7500,5000,3300,6000
+YAxis,Prior distribution type,Uniform,Uniform,Uniform,Uniform
+YAxis,Prior distribution paramter 1,7000,2000,4000,3500
+YAxis,Prior distribution paramter 2,9000,4000,6000,5500
+ZAxis,Prior distribution type,Uniform,Uniform,Uniform,Uniform
+ZAxis,Prior distribution paramter 1,4900,2000,4000,4000
+ZAxis,Prior distribution paramter 2,6900,4000,6000,6000

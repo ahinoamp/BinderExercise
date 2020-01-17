@@ -190,13 +190,13 @@ def convertSurfaces2VTK(points, cell_data, faceCounter, outputOption = 1, filepr
     
     return nSurfaces, points, CatCodes
 
-def CalculatePlotStructure(H1, plot, includeGravityCalc=0, cubesize = 250,  xy_origin=[317883,4379646, 1200-4000]):
+def CalculatePlotStructure(H1, output_name, plot, includeGravityCalc=0, cubesize = 250,  xy_origin=[317883,4379646, 1200-4000]):
     
     newmodelfile ='temp_model'
     H1.write_history(newmodelfile)
 
     #Alter the mesh size if desiring to speed up the process. Recommended size is 100
-    output_name = 'temp_noddy_out'
+#    output_name = 'temp_noddy_out'
     
     
     #output options
@@ -240,10 +240,10 @@ def CalculatePlotStructure(H1, plot, includeGravityCalc=0, cubesize = 250,  xy_o
 
     [maxX, maxY, maxZ] = np.max(points, axis=0)
     [minX, minY, minZ] = np.min(points, axis=0)
-
+    minZ = xy_origin[2]
     x = np.linspace(minX, maxX, N1.nx, dtype=np.float32)
     y = np.linspace(minY, maxY, N1.ny, dtype=np.float32)
-    z = np.linspace(minZ, maxZ, N1.nz, dtype=np.float32)
+    z = np.linspace(xy_origin[2], maxZ, N1.nz, dtype=np.float32)
 #    z = np.linspace(0, 4000, N1.nz, dtype=np.float32)
 
     delx = x[1]-x[0]
@@ -279,7 +279,7 @@ def CalculatePlotStructure(H1, plot, includeGravityCalc=0, cubesize = 250,  xy_o
         
     Data = pd.read_csv('WellNamesPaths.csv')
     
-    filterV = (Data['X_m']>minX+delx) & (Data['Y_m']>minY+dely) &  (Data['Z_m']>minZ+delz) & (Data['X_m']<maxX-delx) & (Data['Y_m']<maxY-dely) & (Data['Z_m']<maxZ-delz)
+    filterV = (Data['X_m']>minX+0.5*delx) & (Data['Y_m']>minY+0.5*dely) &  (Data['Z_m']>minZ+0.5*delz) & (Data['X_m']<maxX-0.5*delx) & (Data['Y_m']<maxY-0.5*dely) & (Data['Z_m']<maxZ-0.5*delz)
     
     Data = Data[filterV]
     WellboreColors = get_wellbore_voxels_from_paths2(lithology, Data['X_m'], Data['Y_m'], Data['Z_m'], [minX, maxX], [minY, maxY], [minZ, maxZ], [delx, dely, delz])
